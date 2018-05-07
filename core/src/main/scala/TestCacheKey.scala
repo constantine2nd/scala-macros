@@ -1,5 +1,6 @@
 import java.util.UUID.randomUUID
-import com.CacheKeyFromArguments
+import com.constantine2nd.CacheKeyFromArguments
+
 
 object TestCacheKey extends App {
 

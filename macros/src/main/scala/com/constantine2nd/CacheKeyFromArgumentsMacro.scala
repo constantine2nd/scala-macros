@@ -1,10 +1,10 @@
-package com
+package com.constantine2nd
 
 import scala.language.experimental.macros
 import scala.language.higherKinds
 import scala.reflect.macros.blackbox
 
-class Macros(val c: blackbox.Context) {
+class CacheKeyFromArgumentsMacro(val c: blackbox.Context) {
   import c.universe._
 
   def buildCacheKeyImpl[V: c.WeakTypeTag](f: c.Tree): c.Tree = {
@@ -43,11 +43,6 @@ class Macros(val c: blackbox.Context) {
                   cacheKey = ($className, $methodName, ${arguments}.mkString("_"))
                   $cachingCall
                 """
-    println("---------------------------------")
-    println(showCode(cachingCall))
-    println("---------------------------------")
-    println(showCode(tree))
-
     tree
   }
 

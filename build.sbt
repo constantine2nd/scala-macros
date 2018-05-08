@@ -1,8 +1,8 @@
-name := "sbt-example"
-organization := "org.scalamacros"
-version := "2.0.0"
+name := "scala-macros"
+organization := "com.github.constantine2nd"
+version := "1.0.0"
 
-scalaVersion in ThisBuild := "2.11.8"
+scalaVersion in ThisBuild := "2.12.4"
 run <<= run in Compile in core
 
 lazy val macros = (project in file("macros")).settings(
